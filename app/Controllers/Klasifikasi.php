@@ -19,26 +19,29 @@ class Klasifikasi extends BaseController
 	{
 		$dataKesimpulan = $this->kesimpulanModel->findAll();
 
-		// print_r($param1);die;
 		$dataBaru = [];
 		foreach ($dataKesimpulan as $value) {
 			$dataBaru[$value['id_kesimpulan']] = $value['kesimpulan'];
 		}
 		
 		// var_dump(in_array($kelas,$dataBaru));die;
-		$data = [];
+		$data = [
+			'title' => 'Klasifikasi',
+			'kesimpulan' => $dataBaru,
+		];
 
 		if(in_array($kelas,$dataBaru)){
 
-			$id_kesimpulan = array_search($kelas, $dataBaru);
+			$kesimpulan_id = array_search($kelas, $dataBaru);
+			$komentarBaru = new Komentar();
+			$data_pagination = $komentarBaru->where('kesimpulan_id', $kesimpulan_id);
 			
-			$data = [
-				'title' => 'Klasifikasi',
-				'komentar' => $this->komentarModel->paginate(1, 'klasifikasi'),
+			$data = array_merge($data, [
 				'semuaKomentar' => $this->komentarModel->findAll(),
-				'kesimpulan' => $dataBaru,
-				'pager' => $this->komentarModel->pager
-			];
+				'komentar' => $data_pagination->paginate(1, 'klasifikasi'),
+				'pager' => $data_pagination->pager,
+				'kesimpulan_id' => $kesimpulan_id
+			]);
 		}
 
 		return view('klasifikasi', $data);
