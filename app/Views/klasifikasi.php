@@ -12,7 +12,8 @@ use App\models\Klasifikasi;
     <div class="container spad">
         <div class="text-center">
             <h4 class="contact-title">
-                Klasifikasi <?= ($kesimpulan_id)? "<sup>($kesimpulan_id)</sup>".$kesimpulan[$kesimpulan_id] : '' ?>
+                Klasifikasi
+                <?= (isset($kesimpulan_id))? "<sup>($kesimpulan_id)</sup>".$kesimpulan[$kesimpulan_id] : '' ?>
             </h4>
         </div>
 
@@ -51,7 +52,11 @@ use App\models\Klasifikasi;
                 
                 $klasifikasi = new Klasifikasi($semuaKomentar, $k['komentar']);
             ?>
-
+                <div class="row">
+                    <div class="col-md-12 border">
+                        Tanggal : <?= date('d-M-Y',strtotime($k['tgl_komentar'])) ?>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-6 border" style="min-height: 180px;">
 
