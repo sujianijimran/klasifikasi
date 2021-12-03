@@ -72,6 +72,16 @@ use App\models\Klasifikasi;
                         <div class="row border" style="min-height: 60px;">
 
                             <div class="col p-2">
+                                <span>Hasil Cleansing :</span>
+                                <p class="col h5">
+                                    <?= $klasifikasi->cleansing ?>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row border" style="min-height: 60px;">
+
+                            <div class="col p-2">
                                 <span>Hasil Case Folding :</span>
                                 <p class="col h5">
                                     <?= $klasifikasi->case_folding ?>
