@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 05 Des 2021 pada 14.25
+-- Waktu pembuatan: 07 Des 2021 pada 08.11
 -- Versi server: 5.7.24
 -- Versi PHP: 7.4.21
 
@@ -262,7 +262,27 @@ INSERT INTO `mengomentari` (`pelanggan_id`, `produk_id`, `komentar`, `kesimpulan
 (2, 7, 'Saya nda suka modelnya, tukar saja dengan yang lain.', 2, '2021-12-05 14:25:18'),
 (2, 8, 'Nanti kurirku yang datang kesitu ambil sis.', 2, '2021-12-05 14:25:18'),
 (2, 9, 'Saya bayar di toko saja langsung kak.', 2, '2021-12-05 14:25:18'),
-(2, 10, 'Saya suka sekali bajunya sis.', 2, '2021-12-05 14:25:18');
+(2, 10, 'Saya suka sekali bajunya sis.', 2, '2021-12-05 14:25:18'),
+(2, 1, 'Kak bisa kita fotokan ulang?', 1, '2021-12-07 08:10:33'),
+(2, 2, 'Mba saya tukar warna boleh?', 1, '2021-12-07 08:10:33'),
+(2, 3, 'Sis, ini sudah dengan belt nya yah? ', 1, '2021-12-07 08:10:33'),
+(2, 4, 'Bisa kirim lokasinya sis?', 1, '2021-12-07 08:10:33'),
+(2, 5, 'Sis bisaji gesek di situ?', 1, '2021-12-07 08:10:33'),
+(2, 6, 'Pengirimannya bisa via lain kah sis?', 1, '2021-12-07 08:10:33'),
+(2, 7, 'Kalau COD langsung di butik bisa?', 1, '2021-12-07 08:10:33'),
+(2, 1, 'Sampai jam berapa kita buka butik sissy?', 1, '2021-12-07 08:10:33'),
+(2, 2, 'Kenapa lama sekali kurirta di sis?', 1, '2021-12-07 08:10:33'),
+(2, 3, 'Kak nda bisa terbuka gambarnya.', 2, '2021-12-07 08:10:33'),
+(2, 4, 'Sis, lokasi butiknya terlalu jauh.', 2, '2021-12-07 08:10:33'),
+(2, 1, 'Sissy saya mau order yang kayak kemarin.', 2, '2021-12-07 08:10:33'),
+(2, 2, 'Kalau sudah restock kabari nah say.', 2, '2021-12-07 08:10:33'),
+(2, 3, 'Perpanjangpi promonya sissy.', 2, '2021-12-07 08:10:33'),
+(2, 4, 'Astaga belum gajian tapi sudah banyak model baru lagi.', 2, '2021-12-07 08:10:33'),
+(2, 5, 'Saya suka barangnya nanti order lagi.', 2, '2021-12-07 08:10:33'),
+(2, 6, 'Rok motifnya kasih restock kembali pi kak.', 2, '2021-12-07 08:10:33'),
+(2, 7, 'Sissy saya mau kesitumi sudah di jalan.', 2, '2021-12-07 08:10:33'),
+(2, 1, 'Adami kurirku kesitu ambil pesananku nah. ', 2, '2021-12-07 08:10:33'),
+(2, 2, 'Kalau bisa promonya sampai 1 minggu sissy.', 2, '2021-12-07 08:10:33');
 
 -- --------------------------------------------------------
 
@@ -372,7 +392,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
