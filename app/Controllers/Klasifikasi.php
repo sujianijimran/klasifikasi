@@ -34,10 +34,10 @@ class Klasifikasi extends BaseController
 
 			$kesimpulan_id = array_search($kelas, $dataBaru);
 			$komentarBaru = new Komentar();
-			$data_pagination = $komentarBaru->where('kesimpulan_id', $kesimpulan_id);
+			$data_pagination = $komentarBaru->join('pelanggan','pelanggan.id_pelanggan=mengomentari.pelanggan_id')->where('kesimpulan_id', $kesimpulan_id);
 			
 			$data = array_merge($data, [
-				'semuaKomentar' => $this->komentarModel->findAll(),
+				'semuaKomentar' => $this->komentarModel->join('pelanggan','pelanggan.id_pelanggan=mengomentari.pelanggan_id')->findAll(),
 				'komentar' => $data_pagination->paginate(1, 'klasifikasi'),
 				'pager' => $data_pagination->pager,
 				'kesimpulan_id' => $kesimpulan_id

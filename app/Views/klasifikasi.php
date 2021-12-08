@@ -53,7 +53,12 @@ use App\models\Klasifikasi;
                 $klasifikasi = new Klasifikasi($semuaKomentar, $k['komentar']);
             ?>
                 <div class="row">
-                    <div class="col-md-12 border">
+                    <div class="col-md-12 border p-2">
+                        Nama Pelanggan : <?= $k['nama_pelanggan']; ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 border p-2">
                         Tanggal : <?= date('d-M-Y',strtotime($k['tgl_komentar'])) ?>
                     </div>
                 </div>
