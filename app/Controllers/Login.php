@@ -46,9 +46,8 @@ class Login extends BaseController
 
 				$user_session = [
 					'id' => $user_login['admin_id'],
-					'username' => $user_login['nama_admin'],
+					'username' => $user_login['username'],
 					'nama_admin' => $user_login['nama_admin'],
-					'alamat_admin' => $user_login['alamat_admin'], 
 					'login' => true,
 					'status' => 'admin'
 				];
@@ -58,24 +57,6 @@ class Login extends BaseController
 			}else{
 				session()->setFlashData('pesan', 'Username atau Password salah.');
 			}
-
-		// 	//  Mengecek apakah user yang login adalah Dosen
-		// 	else if (count($this->dosenModel->cekDosen($username, $password))) {
-		// 		// dd("Dosen");
-		// 		$user_login = $this->dosenModel->cekDosen($username, $password)[0];
-
-		// 		$user_session = [
-		// 			'id' => $user_login['nip_nidn'],
-		// 			'username' => $user_login['nip_nidn'],
-		// 			'login' => true,
-		// 			'status' => 'dosen'
-		// 		];
-		// 		session()->set($user_session);
-
-		// 		return redirect()->to('/dashboard/index');
-		// 	} else {
-		// 		session()->setFlashData('pesan', 'Username atau Password salah.');
-		// 	}
 		}
 
 		return view('login', $data);
