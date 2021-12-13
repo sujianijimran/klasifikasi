@@ -1,5 +1,5 @@
 <!-- Footer top section -->
-<section class="footer-top-section home-footer">
+<section class="footer-top-section home-footer" style="padding-top: 50px; padding-bottom: 0;">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-8 col-sm-12">
@@ -9,21 +9,21 @@
                             Butik Pilihan Fashion
                         </a>
                     </span>
-                     <br>
+                    <br>
                     <span class="text-white">
                         Kota Kendari, Sulawesi Tenggara, Indonesia
                     </span>
-                   
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
 <!-- Footer top section end -->
 
 <!-- Footer section -->
-<footer class="footer-section">
+<footer class="footer">
     <div class="container">
         <p class="copyright">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
