@@ -39,38 +39,6 @@ class Klasifikasi extends BaseController
 		return view('klasifikasi', $data);
 	}
 
-	public function klasifikasiLama($kelas = '')
-	{
-		$dataKesimpulan = $this->kesimpulanModel->findAll();
-
-		$dataBaru = [];
-		foreach ($dataKesimpulan as $value) {
-			$dataBaru[$value['id_kesimpulan']] = $value['kesimpulan'];
-		}
-		
-		// var_dump(in_array($kelas,$dataBaru));die;
-		$data = [
-			'title' => 'Klasifikasi',
-			'kesimpulan' => $dataBaru,
-		];
-
-		if(in_array($kelas,$dataBaru)){
-
-			$kesimpulan_id = array_search($kelas, $dataBaru);
-			$komentarBaru = new Komentar();
-			$data_pagination = $komentarBaru->join('pelanggan','pelanggan.id_pelanggan=mengomentari.pelanggan_id')->where('kesimpulan_id', $kesimpulan_id);
-			
-			$data = array_merge($data, [
-				'semuaKomentar' => $this->komentarModel->join('pelanggan','pelanggan.id_pelanggan=mengomentari.pelanggan_id')->findAll(),
-				'komentar' => $data_pagination->paginate(1, 'klasifikasi'),
-				'pager' => $data_pagination->pager,
-				'kesimpulan_id' => $kesimpulan_id
-			]);
-		}
-
-		return view('klasifikasi-lama', $data);
-	}
-
 	public function detail($id_komentar)
 	{
 		$dataKesimpulan = $this->kesimpulanModel->findAll();
