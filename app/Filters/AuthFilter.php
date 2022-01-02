@@ -12,7 +12,7 @@ class AuthFilter implements FilterInterface
     {
         // Menentukan variabel url bernilai uri halaman login
         $url = base_url('login/index');
-        $path_login = ['login/index', 'login', 'home/index','home','/','tambahKomentar'];
+        $path_login = ['login/index', 'login', 'home/index','home','/','tambahKomentar','tambahKomentar/tambah'];
         // Halaman yang tidak boleh diakses ketika sudah login
         $not_access = ['login/index','login'];
         // $path_buat_jadwal = ['mengelolaJadwal/tambah', 'mengelolaJadwal/simpan', 'mengelolaJadwal/buatJadwal', 'mengelolaJadwal/hapus'];

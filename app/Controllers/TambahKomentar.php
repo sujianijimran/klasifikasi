@@ -63,7 +63,7 @@ class TambahKomentar extends BaseController
 			if($produk_id == 0){
 
 				if($produk_tambahan == Null){
-					session()->setFlashData('error', 'Tambahkan data produk baru gagal');
+					session()->setFlashData('error', 'Pastikan anda menambahkan data produk');
 					$result_produk = false;
 				}else{
 					$total_produk = 1;
