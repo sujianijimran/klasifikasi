@@ -40,9 +40,9 @@ class TambahKomentar extends BaseController
 			$nama_pelanggan = $this->request->getVar('nama_pelanggan');
 			$no_hp = $this->request->getVar('no_hp');
 			$alamat_pelanggan = $this->request->getVar('alamat_pelanggan');
-			$produk_id = $this->request->getVar('produk_id');
+			$produk_id = (int) $this->request->getVar('produk_id');
+			$produk_tambahan = $this->request->getVar('produk_tambahan');
 			$komentar = $this->request->getVar('komentar');
-			
 			$klasifikasi = new Klasifikasi($dataKomentar, $komentar);
 			
 			$kesimpulan_id = $klasifikasi->kesimpulan;
@@ -59,7 +59,21 @@ class TambahKomentar extends BaseController
 				$pelanggan_id = $result;
 			}
 
-			if($result){
+			$result_produk = true;
+			if($produk_id == 0){
+
+				if($produk_tambahan == Null){
+					session()->setFlashData('error', 'Pastikan anda menambahkan data produk');
+					$result_produk = false;
+				}else{
+					$total_produk = 1;
+					$dataProdukBaru = ['produk' => $produk_tambahan,'total' => $total_produk];
+					$result_produk = $this->produkModel->insert($dataProdukBaru);
+					$produk_id = $result_produk;
+				}
+			}
+
+			if($result && $result_produk){
 				
 				$data = array_merge(compact('pelanggan_id'),compact('produk_id'), compact('komentar'), compact('kesimpulan_id'));
 				$this->komentarModel->insert($data);

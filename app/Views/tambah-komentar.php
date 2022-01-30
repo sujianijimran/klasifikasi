@@ -55,6 +55,12 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
+                    <i class="text-muted">(Optional) Ketikan nama produk jika tidak berada dalam list di atas</i>
+                    <input type="text" name="produk_tambahan">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
                     Komentar
                     <div class="text-center">
                         <textarea rows="3" name="komentar" required></textarea>
